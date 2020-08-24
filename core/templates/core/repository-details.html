@@ -48,7 +48,8 @@
                         </div>
                         <div class="contact-form article-comment box-shadow">
                             <h4>Send a comment</h4>
-                            <form id="contact-form" method="POST">
+                            <form id="contact-form">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -67,7 +68,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="send">
-                                            <button class="m-btn m-btn-theme"><span>Submit</span> <i class="arrow"></i></button>
+                                            <button class="m-btn m-btn-theme" type="submit"><span>Submit</span> <i class="arrow"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +82,7 @@
                             </div>
                             <div class="p-20px">
                                 <form class="d-flex flex-column flex-md-row m-5px-b input-group">
-                                    <input type="email" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Search">
+                                    <input type="text" name="tag_search" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Search By Tags">
                                     <button class="m-btn m-btn-theme m-btn-radius flex-shrink-0" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>

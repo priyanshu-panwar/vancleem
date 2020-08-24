@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Experience_Clients, Work, Post, Category
+from .models import Experience_Clients, Work, Post, Category, Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 
@@ -52,7 +52,7 @@ def post_home(request):
 	common_tags = Post.tags.most_common()[:4]
 
 	if is_valid_queryparam(tag_search):
-		posts = posts.filter(tags__slug = tag_search)
+		posts = Post.objects.filter(tags__slug = tag_search)
 
 	categories = Category.objects.all()
 	categories = categories[::-1]
@@ -84,15 +84,29 @@ def post_detail(request, pk):
 
 	tag_search = request.GET.get('tag_search')
 	common_tags = Post.tags.most_common()[:4]
+	print(tag_search)
 
 	if is_valid_queryparam(tag_search):
-		posts = posts.filter(tags__slug = tag_search)
+		posts = Post.objects.filter(tags__slug = tag_search)
 
 	object = get_object_or_404(Post, pk=pk)
 	
 	categories = Category.objects.all()
 	categories = categories[::-1]
 	categories = categories[:4]
+
+	name = request.GET.get('Name')
+	email = request.GET.get('Email')
+	mess = request.GET.get('message')
+	print("NAME = ", name)
+	print("EMAIL = ", email)
+	print("MESSAGE = ", mess)
+
+	if is_valid_queryparam(name) and is_valid_queryparam(email) and is_valid_queryparam(mess):
+		c = Comment(name=name, email=email, message=mess)
+		c.save()
+		#email
+		return render(request, 'core/thankyou.html')
 
 	context = {
 		'post' : object,
@@ -116,9 +130,27 @@ class PostListView(ListView):
 
 def post_category(request, pk):
 	posts = Post.objects.filter(category__id=pk)
-	
+	posts = posts[::-1]
+
+	fun = Post.objects.all()
+	fun = fun[::-1]
+	recent_posts = fun[:4]
+
+	tag_search = request.GET.get('tag_search')
+	common_tags = Post.tags.most_common()[:4]
+
+	if is_valid_queryparam(tag_search):
+		posts = posts.filter(tags__slug = tag_search)
+
+	categories = Category.objects.all()
+	categories = categories[::-1]
+	categories = categories[:4]
+
 	context = {
 		'posts' : posts,
+		'recent_posts' : recent_posts,
+		'common_tags' : common_tags,
+		'categories' : categories,
 	}
 
 	return render(request, 'core/repository.html', context)
