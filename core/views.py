@@ -114,7 +114,7 @@ def post_detail(request, pk):
 			'Test Message',
 			EMAIL_HOST_USER,
 			[ADMIN_MAIL_1, ADMIN_MAIL_2, email],
-			fail_silently=False
+			fail_silently=True,
 		)
 		return render(request, 'core/thankyou.html')
 
@@ -181,7 +181,7 @@ def contact(request):
 			'Test Message',
 			EMAIL_HOST_USER,
 			[ADMIN_MAIL_1, ADMIN_MAIL_2, email],
-			fail_silently=False
+			fail_silently=True,
 		)
 		c.save()
 		return render(request, 'core/thankyou.html')
