@@ -80,3 +80,19 @@ class Comment(models.Model):
 	def __str__(self):
 		return self.email
 
+
+class Contact(models.Model):
+	name = models.CharField(max_length=100)
+	email = models.EmailField()
+	company = models.CharField(max_length=100, null=True, blank=True)
+	phone = models.CharField(max_length=13, null=True, blank=True)
+	message = models.TextField()
+	date = models.DateTimeField(auto_now_add=True)
+
+	class Meta:
+		verbose_name_plural = "Contacts"
+		ordering = ['-date']
+
+	def __str__(self):
+		return self.email
+

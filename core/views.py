@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Experience_Clients, Work, Post, Category, Comment
+from .models import Experience_Clients, Work, Post, Category, Comment, Contact
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
+from django.core.mail import send_mail
+from vancleem.settings import EMAIL_HOST_USER, ADMIN_MAIL_1, ADMIN_MAIL_2
+
 
 def home(request):
 	return render(request, 'core/index.html')
@@ -106,6 +109,13 @@ def post_detail(request, pk):
 		c = Comment(name=name, email=email, message=mess)
 		c.save()
 		#email
+		send_mail(
+			'Thank you for contacting - vanCleem.com',
+			'Test Message',
+			EMAIL_HOST_USER,
+			[ADMIN_MAIL_1, ADMIN_MAIL_2, email],
+			fail_silently=False
+		)
 		return render(request, 'core/thankyou.html')
 
 	context = {
@@ -154,3 +164,26 @@ def post_category(request, pk):
 	}
 
 	return render(request, 'core/repository.html', context)
+
+
+def contact(request):
+	name = request.GET.get('contact-name')
+	email = request.GET.get('contact-email')
+	company = request.GET.get('contact-company')
+	phone = request.GET.get('contact-phone')
+	message = request.GET.get('contact-message')
+
+	if is_valid_queryparam(name) and is_valid_queryparam(email) and is_valid_queryparam(message):
+		c = Contact(name=name, email=email, company=company, phone=phone, message=message)
+		#email
+		send_mail(
+			'Thank you for contacting - vanCleem.com',
+			'Test Message',
+			EMAIL_HOST_USER,
+			[ADMIN_MAIL_1, ADMIN_MAIL_2, email],
+			fail_silently=False
+		)
+		c.save()
+		return render(request, 'core/thankyou.html')
+
+	return render(request, 'core/contact.html')

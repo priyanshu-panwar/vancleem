@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Experience_Clients, Work, Post, Category, Comment
+from .models import Experience_Clients, Work, Post, Category, Comment, Contact
 
 admin.site.register(Experience_Clients)
 admin.site.register(Category)
@@ -20,4 +20,10 @@ class PostAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
 	list_display = ['name', 'email', 'date']
 	list_filter = ['date', ]
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+	list_display = ['name', 'email', 'date', 'company']
+	list_filter = ['date', ]
+	search_fields = ('email', 'company', 'name')
 
