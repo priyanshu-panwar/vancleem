@@ -113,7 +113,21 @@ def post_detail(request, pk):
 			'Thank you for contacting - vanCleem.com',
 			'Test Message',
 			EMAIL_HOST_USER,
-			[ADMIN_MAIL_1, ADMIN_MAIL_2, email],
+			[email, ],
+			fail_silently=True,
+		)
+		send_mail(
+			'Thank you for contacting - vanCleem.com',
+			'Test Message',
+			EMAIL_HOST_USER,
+			[ADMIN_MAIL_1, ],
+			fail_silently=True,
+		)
+		send_mail(
+			'Thank you for contacting - vanCleem.com',
+			'Test Message',
+			EMAIL_HOST_USER,
+			[ADMIN_MAIL_2, ],
 			fail_silently=True,
 		)
 		return render(request, 'core/thankyou.html')
@@ -180,7 +194,21 @@ def contact(request):
 			'Thank you for contacting - vanCleem.com',
 			'Test Message',
 			EMAIL_HOST_USER,
-			[ADMIN_MAIL_1, ADMIN_MAIL_2, email],
+			[email, ],
+			fail_silently=True,
+		)
+		send_mail(
+			'Thank you for contacting - vanCleem.com',
+			'Test Message',
+			EMAIL_HOST_USER,
+			[ADMIN_MAIL_1, ],
+			fail_silently=True,
+		)
+		send_mail(
+			'Thank you for contacting - vanCleem.com',
+			'Test Message',
+			EMAIL_HOST_USER,
+			[ADMIN_MAIL_2, ],
 			fail_silently=True,
 		)
 		c.save()

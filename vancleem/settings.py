@@ -133,15 +133,21 @@ MEDIA_URL = '/media/'
 
 # Email
 
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "priyanshup.ec.18@nitj.ac.in"
+EMAIL_HOST_PASSWORD = 'pjeovhahbktyvgqq'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get("priyanshup.ec.18@nitj.ac.in")
-EMAIL_HOST_PASSWORD = os.environ.get("pjeovhahbktyvgqq")
+#EMAIL_USE_TLS = True
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = os.environ.get("priyanshup.ec.18@nitj.ac.in")
+#EMAIL_HOST_PASSWORD = os.environ.get("pjeovhahbktyvgqq")
 
-ADMIN_MAIL_1 = os.environ.get("grant@vancleem.com")
-ADMIN_MAIL_2 = os.environ.get("priyansu009ch@gmail.com")
+ADMIN_MAIL_1 = "grant@vancleem.com"
+ADMIN_MAIL_2 = "priyanshu009ch@gmail.com"
 
 
 django_heroku.settings(locals())
