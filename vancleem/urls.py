@@ -18,12 +18,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from core.views import PostListView
+
 admin.site.site_header = 'vanCleem Admin Portal'
 admin.site.site_title = 'vanCleem'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls'))
+    path('', include('core.urls')),
+    path('tag/(?P<slug>[\w-]+)/$', PostListView.as_view(), name='tagged'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

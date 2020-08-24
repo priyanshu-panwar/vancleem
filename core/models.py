@@ -49,7 +49,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=100, default='')
 	image = models.ImageField(upload_to='posts/', null=True, blank=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
-	category = models.ManyToManyField(Category)
+	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
 	content = models.TextField()
 	code = models.TextField(null=True, blank=True)
 	tags = TaggableManager()
