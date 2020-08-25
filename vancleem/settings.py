@@ -25,7 +25,7 @@ SECRET_KEY = '#)da+%ztm3h8+-v5=)*!!&$h@@x9yt#1xclpk6e01frz1$g*^n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['45.77.99.249', 'vancleem.com', 'www.vancleem.com']
 
 
 
