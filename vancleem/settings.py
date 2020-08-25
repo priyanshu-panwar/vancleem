@@ -26,7 +26,8 @@ SECRET_KEY = '#)da+%ztm3h8+-v5=)*!!&$h@@x9yt#1xclpk6e01frz1$g*^n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['107.191.42.102', 'https://www.vancleem.com', 'https://vancleem.com']
+
 
 
 # Application definition
@@ -146,7 +147,7 @@ EMAIL_HOST = "smtp.gmail.com"
 #EMAIL_HOST_USER = os.environ.get("priyanshup.ec.18@nitj.ac.in")
 #EMAIL_HOST_PASSWORD = os.environ.get("pjeovhahbktyvgqq")
 
-ADMIN_MAIL_1 = "grant@vancleem.com"
+ADMIN_MAIL_1 = "grantvancleem@gmail.com"
 ADMIN_MAIL_2 = "priyanshu009ch@gmail.com"
 
 
