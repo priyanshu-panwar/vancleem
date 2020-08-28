@@ -51,7 +51,6 @@ class Post(models.Model):
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
 	content = models.TextField()
-	code = models.TextField(null=True, blank=True)
 	tags = TaggableManager()
 	meta_description = models.TextField(default='', null=True, blank=True)
 	date_posted = models.DateTimeField(auto_now_add=True)
@@ -65,6 +64,19 @@ class Post(models.Model):
 	class Meta:
 		verbose_name_plural = "Posts"
 		ordering = ['-date_posted', ]
+
+
+class Code(models.Model):
+	post = models.ForeignKey(Post, on_delete=models.CASCADE)
+	title = models.CharField(max_length=200, default='')
+	description = models.TextField()
+	code = models.TextField()
+
+	class Meta:
+		verbose_name_plural = "Codes"
+
+	def __str__(self):
+		return self.title
 
 
 class Comment(models.Model):

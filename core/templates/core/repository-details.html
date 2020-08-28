@@ -35,9 +35,16 @@
                             
                             <br><br>
 
-                            {{ post.code|safe }}
+                            {% for c in post.code_set.all %}
 
+                            <h4>{{ c.title|safe }}</h4>
+                            {{ c.description|safe }}
                             <br>
+                            {{ c.code|safe }}
+                            <br>
+
+                            {% endfor %}
+
 
                             <div class="nav tag-cloud">
                                 {% for tag in post.tags.all %}
