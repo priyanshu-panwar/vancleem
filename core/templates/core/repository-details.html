@@ -29,19 +29,17 @@
                                 <img src="{{ post.image.url }}" title="" alt="">
                             </div>
 
-                            <br>
-                            
-                            {{ post.content|safe }}
-                            
-                            <br><br>
+                            <div class="article-title">
+                                <p>{{ post.content }}</p>
+                            </div>
 
                             {% for c in post.code_set.all %}
 
-                            <h4>{{ c.title|safe }}</h4>
-                            {{ c.description|safe }}
-                            <br>
-                            {{ c.code|safe }}
-                            <br>
+                            <div class="article-content">
+                                <h4>{{ c.title }}</h4>
+                                <p>{{ c.description }}</p>
+                                <br>{{ c.code|safe }}<br>
+                            </div>
 
                             {% endfor %}
 
