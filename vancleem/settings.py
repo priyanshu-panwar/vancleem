@@ -25,7 +25,7 @@ SECRET_KEY = '#)da+%ztm3h8+-v5=)*!!&$h@@x9yt#1xclpk6e01frz1$g*^n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['45.77.99.249', 'vancleem.com', 'www.vancleem.com']
+ALLOWED_HOSTS = ['45.77.99.249', 'vancleem.com', 'www.vancleem.com', 'localhost']
 
 
 
@@ -76,16 +76,15 @@ WSGI_APPLICATION = 'vancleem.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-"""
-if DEBUG:
+
+"""if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-else:
-"""
+else:"""
 DATABASES = {
 'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
