@@ -31,7 +31,7 @@
                             <div class="col-sm-6">
                                 <div class="card blog-grid-1 box-shadow-hover">
                                     <div class="blog-img">
-                                        <a href="#">
+                                        <a href="{% url 'post-detail' post.id %}">
                                             <img src="{{ post.image.url }}" title="" alt="" style="height: 175px; width: 400px;">
                                         </a>
                                     </div>

@@ -19,15 +19,15 @@
             <div class="container">
                 <div class="row full-screen align-items-center p-100px-t">
                     <div class="col-lg-6 m-15px-tb">
-                        <h6 class="m-10px-b white-color">- Available for some contract work</h6>
+                        <h6 class="m-10px-b white-color">-  Based in Montreal (Canada)</h6>
                         <h1 class="h1 m-10px-b white-color"><span class="font-w-300">Business Intelligence<br />&amp; Automation Consultant</h1>
                         <p class="font-2 white-color-light">I am specialized in advanced analytics and I develop well-designed Power BI dashboards. I also create applications and automate processes using Python, VBA and Google AppScript. </p>
                         <div class="p-20px-t m-btn-wide">
-                            <a class="m-btn m-btn-radius m-btn-white m-10px-r" href="#">
-                                <span class="m-btn-inner-text">Services</span>
+                            <a class="m-btn m-btn-radius m-btn-white m-10px-r" href="{% url 'solutions' %}">
+                                <span class="m-btn-inner-text">Solutions</span>
                                 <span class="m-btn-inner-icon arrow"></span>
                             </a>
-                            <a class="m-btn m-btn-radius m-btn-theme2nd" href="#">
+                            <a class="m-btn m-btn-radius m-btn-theme2nd" href="{% url 'contact' %}">
                                 <span class="m-btn-inner-text">Contact</span>
                                 <span class="m-btn-inner-icon arrow"></span>
                             </a>
@@ -156,7 +156,40 @@
                 </div>
 
                 <div class="row">
+                    {% for work in works %}
+
                     <div class="col-lg-4 m-15px-tb">
+                        <div class="card blog-grid-1 box-shadow-hover">
+                            <div class="blog-img">
+                                <a class="video-btn theme p-center video" href="{{ work.video }}" data-video="{{ work.video }}"  data-toggle="modal" data-target="#videoModal"><span></span></a>
+                                <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-body">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <iframe width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                                <a href="#">
+                                    <img src="{% static 'img/post_background_1.jpg' %}" title="" alt="" >
+                            <span></span>
+                        </a>
+                            </div>
+                            <div class="card-body blog-info">
+                                <h5>
+                                    <a href="#">{{ work.title }}</a>
+                                </h5>
+                                <p class="m-0px">{{ work.description|truncatechars:150 }}</p>
+                                <div class="btn-bar">
+                                    <a class="m-link-theme" href="#">{{ work.client }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--<div class="col-lg-4 m-15px-tb">
                         <div class="card blog-grid-1 box-shadow-hover">
                             <div class="blog-img">
                                 <a class="video-btn theme popup-youtube p-center" href="https://www.youtube.com/watch?v=dNIfsv1rKJo"><span></span></a>
@@ -200,7 +233,7 @@
                                 <p class="m-0px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum text...</p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </section>

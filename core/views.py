@@ -7,7 +7,13 @@ from vancleem.settings import EMAIL_HOST_USER, ADMIN_MAIL_1, ADMIN_MAIL_2
 
 
 def home(request):
-	return render(request, 'core/index.html')
+	works = Work.objects.all()
+	works = works[::-1]
+	works = works[:3]
+	context = {
+		'works' : works,
+	}
+	return render(request, 'core/index.html', context)
 
 
 def experience(request):
