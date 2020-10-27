@@ -6,6 +6,9 @@ from django.core.mail import send_mail
 from vancleem.settings import EMAIL_HOST_USER, ADMIN_MAIL_1, ADMIN_MAIL_2
 
 
+def project(request):
+	pass
+
 def home(request):
 	works = Work.objects.all()
 	works = works[::-1]

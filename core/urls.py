@@ -10,4 +10,5 @@ urlpatterns = [
 	path('post/<int:pk>/', views.post_detail, name='post-detail'),
 	path('category/<int:pk>/', views.post_category, name='post-category'),
 	path('contact/', views.contact, name='contact'),
+	path('project/', views.project, name='project'),
 ]

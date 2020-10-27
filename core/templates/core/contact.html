@@ -1,115 +1,136 @@
-{% extends 'core/base_inner.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
 
 {% block content %}
 
+		
+		<span id="header_shadow"></span>
+		<!-- /TOP NAV -->
 
-    <!-- Main -->
-    <main>
-        <!-- Home Banner -->
-        <section class="section parallax effect-section" style="background-image: url('{% static "img/montreal.jpg" %}');">
-            <div class="mask dark-bg opacity-8"></div>
-            <div class="container position-relative">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h1 class="display-4 white-color m-0px">Contact</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Home Banner -->
-        <!-- Section -->
-        <section class="section gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 m-15px-tb">
-                        <div class="box-shadow p-65px-tb p-40px-lr hover-top white-bg">
-                            <div class="m-30px-b only-icon-70 theme-color">
-                                <i class="icon-map"></i>
-                            </div>
-                            <h5 class="m-15px-b">Location</h5>
-                            <p class="m-0px">Montreal, Canada.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 m-15px-tb">
-                        <div class="box-shadow p-65px-tb p-40px-lr hover-top white-bg">
-                            <div class="m-30px-b only-icon-70 theme-color">
-                                <i class="icon-chat"></i>
-                            </div>
-                            <h5 class="m-15px-b">Let's Talk</h5>
-                            <p class="m-0px">Phone: 1-514-978-9422</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 m-15px-tb">
-                        <div class="box-shadow p-65px-tb p-40px-lr hover-top white-bg">
-                            <div class="m-30px-b only-icon-70 theme-color">
-                                <i class="icon-envelope"></i>
-                            </div>
-                            <h5 class="m-15px-b">Email Me</h5>
-                            <p class="m-0px links-dark">
-                                <a href="mailto:info@domain.com">grant@vancleem.com</a><br />
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Home Banner -->
-        <!-- Section -->
-        <section class="section">
-            <div class="container">
-                <div class="row md-m-25px-b m-40px-b justify-content-center">
-                    <div class="col-lg-7 text-center">
-                        <h3 class="h1 m-15px-b p-15px-b after-50 theme-after">Get in touch!</h3>
-                        <p class="m-0px font-2">Moxom is a HTML5 template based on Sass and Bootstrap 4 with modern and creative multipurpose design you can use it as a startups.</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-9 col-xl-8">
-                        <form class="rd-mailform">
-                            {% csrf_token %}
-                            <div class="form-row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="contact-name">Your Name</label>
-                                        <input id="contact-name" type="text" name="contact-name" placeholder="Rachel Roth" data-constraints="@Required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="contact-email">Email Address</label>
-                                        <input id="contact-email" type="email" name="contact-email" placeholder="name@example.com" data-constraints="@Required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="contact-company">Company (optional)</label>
-                                        <input type="text" name="contact-company" class="form-control" id="contact-company">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="contact-phone">Phone (optional)</label>
-                                        <input type="tel" name="contact-phone" class="form-control" id="contact-phone">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label for="contact-message">Message</label>
-                                        <textarea class="form-control" id="contact-message" name="contact-message" rows="3" placeholder="Hi there, I would like to ..." data-constraints="@Required"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="m-btn m-btn-theme m-btn-radius w-100" type="submit" name="send">Get Started</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Section -->
-    </main>
-    <!-- End Main -->
+
+		<!-- WRAPPER -->
+		<div id="wrapper">
+
+			<!-- PAGE TITLE -->
+			<header id="page-title"> <!-- style="background-image:url('assets/images/demo/parallax_bg.jpg')" -->
+				<!--
+					Enable only if bright background image used
+					<span class="overlay"></span>
+				-->
+
+				<div class="container">
+					<h1>Contact Us</h1>
+
+					<ul class="breadcrumb">
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li class="active">Contact</li>
+					</ul>
+				</div>
+			</header>
+
+			<section id="contact" class="container">
+
+
+				<div class="row">
+
+					<!-- FORM -->
+					<div class="col-md-8">
+
+						<h2>Contact form </h2>
+
+						<!--
+							if you want to use your own contact script, remove .hide class
+						-->
+
+						<!-- SENT OK -->
+						<div id="_sent_ok_" class="alert alert-success fade in fsize16 hide">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<strong>Thank You!</strong> Your message successfully sent!
+						</div>
+						<!-- /SENT OK -->
+
+						<!-- SENT FAILED -->
+						<div id="_sent_required_" class="alert alert-danger fade in fsize16 hide">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<strong>Failed!</strong> Please complete all mandatory (*) fields!
+						</div>
+						<!-- /SENT FAILED -->
+
+						<form id="contactForm" class="white-row">
+							{% csrf_token %}
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-4">
+										<label>Full Name *</label>
+										<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="contact-name" id="contact_name">
+									</div>
+									<div class="col-md-4">
+										<label>E-mail Address *</label>
+										<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="contact-email" id="contact_email">
+									</div>
+									<div class="col-md-4">
+										<label>Phone</label>
+										<input type="text" value="" data-msg-required="Please enter your phone" data-msg-email="Please enter your phone" maxlength="100" class="form-control" name="contact-phone" id="contact_phone">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<label>Subject</label>
+										<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="contact-company" id="contact_subject">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<label>Message *</label>
+										<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="contact-message" id="contact_message"></textarea>
+									</div>
+								</div>
+							</div>
+
+							<br />
+
+							<div class="row">
+								<div class="col-md-12">
+									<span class="pull-right"><!-- captcha -->
+										<p>Google Not a Robot</p>
+									</span>
+
+									<input id="contact_submit" type="submit" value="Send Message" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+								</div>
+							</div>
+						</form>
+
+					</div>
+					<!-- /FORM -->
+
+
+					<!-- INFO -->
+					<div class="col-md-4">
+
+						<h2>Let's connect</h2>
+
+						<div class="white-row">
+							<figure>
+								<img class="radius6 img-responsive" src="{% static 'assets/images/grant-van-cleemput-2.jpg' %}" alt="" />
+							</figure>
+
+							<a class="btn btn-primary" href="https://www.linkedin.com/in/vancleem/" target="_blank"><i class="fa fa-linkedin"></i> Grant Van Cleemput</a>
+
+						</div>
+
+
+					</div>
+					<!-- /INFO -->
+
+				</div>
+
+			</section>
+
+		</div>
+		<!-- /WRAPPER -->
 
 {% endblock content %}

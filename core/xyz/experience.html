@@ -1,0 +1,183 @@
+{% extends 'core/base_inner.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Main -->
+    <main>
+        <!-- Home Banner -->
+        <section class="section parallax effect-section" style="background-image: url('{% static "img/montreal.jpg" %}');">
+            <div class="mask dark-bg opacity-8"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h6 class="white-color-light font-w-500">Domain Expertise and Skills</h6>
+                        <h1 class="display-4 white-color m-0px">Experience</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Home Banner -->
+        <!-- Section -->
+        <section class="section border-style bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 m-15px-tb">
+                        <div class="overflow-hidden border-radius-5 box-shadow">
+                            <img src="{% static 'img/vancleem-strategy.svg' %}" title="" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 m-15px-tb">
+                        <div class="p-40px-lr lg-p-0px-lr">
+                            <h6 class="theme-color m-10px-b">Domain Expertise</h6>
+                            <h2 class="h2 m-20px-b">Understanding the goals and objectives of your business.</h2>
+                            <p>I have many years of experience in the Aerospace, Travel and Financial Services Industries. The core of my work has been centered around Sales, Pricing, Benchmarking, Forecasting, Revenue Management and Yield Management.</p>
+                            <p>I engage with stakeholders and knowledge experts to understand the needs of their business and design the appropriate solutions.</p>
+                            <div class="p-10px-t">
+                                <a class="m-btn m-btn-radius m-btn-theme" href="{% url 'solutions' %}">
+                                    <span class="m-btn-inner-text">Our Solutions</span>
+                                    <span class="m-btn-inner-icon arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Home Banner -->
+        <!-- Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3 lg-m-15px-tb">
+                        <div class="media">
+                            <div class="only-icon-50 theme-color">
+                                <i class="icon-tools"></i>
+                            </div>
+                            <div class="media-body p-15px-l">
+                                <h6 class="m-5px-b">Requirements Gathering</h6>
+                                <p class="m-0px">Lorem Ipsum is simply text the printing and typesetting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 lg-m-15px-tb">
+                        <div class="media">
+                            <div class="only-icon-50 theme-color">
+                                <i class="ti-files"></i>
+                            </div>
+                            <div class="media-body p-15px-l">
+                                <h6 class="m-5px-b">Full Documentation</h6>
+                                <p class="m-0px">Lorem Ipsum is simply text the printing and typesetting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 lg-m-15px-tb">
+                        <div class="media">
+                            <div class="only-icon-50 theme-color">
+                                <i class="ti-palette"></i>
+                            </div>
+                            <div class="media-body p-15px-l">
+                                <h6 class="m-5px-b">Well-Designed</h6>
+                                <p class="m-0px">We believe that good designs brings clarity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 lg-m-15px-tb">
+                        <div class="media">
+                            <div class="only-icon-50 theme-color">
+                                <i class="ti-money"></i>
+                            </div>
+                            <div class="media-body p-15px-l">
+                                <h6 class="m-5px-b">Reasonable Pricing</h6>
+                                <p class="m-0px">We believe that good designs brings clarity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+        <!-- Section -->
+        <section class="section dark-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 m-15px-tb">
+                        <div class="card card-body box-shadow-lg hover-top theme-bg border-0">
+                            <div class="media m-20px-b">
+                                <div class="only-icon-70 white-color font-w-700">
+                                    01.
+                                </div>
+                                <div class="media-body p-15px-l  border-left-1 border-color-white-alt m-15px-l">
+                                    <h6 class="h5 m-0px white-color">Programming<br> Languages</h6>
+                                </div>
+                            </div>
+                            <p class="m-0px white-color-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 m-15px-tb">
+                        <div class="card card-body box-shadow-lg hover-top theme-bg border-0">
+                            <div class="media m-20px-b">
+                                <div class="only-icon-70 white-color font-w-700">
+                                    02.
+                                </div>
+                                <div class="media-body p-15px-l  border-left-1 border-color-white-alt m-15px-l">
+                                    <h6 class="h5 m-0px white-color">Data<br> Processing</h6>
+                                </div>
+                            </div>
+                            <p class="m-0px white-color-light">We perform complex queries on databases such as Microsoft SQL Server, MySQL, MongoDB (NoSql). Data cleansing is done mostly using Python and VBA scripting. We also frequently make use of external data from websites and APIs.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 m-15px-tb">
+                        <div class="card card-body box-shadow-lg hover-top theme-bg border-0">
+                            <div class="media m-20px-b">
+                                <div class="only-icon-70 white-color font-w-700">
+                                    03.
+                                </div>
+                                <div class="media-body p-15px-l  border-left-1 border-color-white-alt m-15px-l">
+                                    <h6 class="h5 m-0px white-color">Application<br> Software</h6>
+                                </div>
+                            </div>
+                            <p class="m-0px white-color-light">We are experts in a variety of tools such as Microsoft Power BI, Microsoft Excel (VBA, Power Query, Power Pivot), Microsoft Access (VBA), Microsoft PowerPoint, Microsoft Sharepoint, Pycharm, Google G-Suite (AppScript) and Adobe Illustrator...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+        <!-- Section -->
+        <!--<div class="section gray-bg">
+            <div class="container">
+                <div class="owl-carousel" data-items="7" data-nav-dots="false" data-md-items="5" data-sm-items="4" data-xs-items="4" data-xx-items="3" data-space="30" data-autoplay="true">
+                    
+                    <div>
+                        <img src="{% static 'img/paypal.svg' %}" title="" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>-->
+
+        <div class="container">
+   <section class="customer-logos slider" style="padding-bottom: 30px; padding-top: 30px;">
+        {% for object in logos %}
+            <div class="slide"><img src="{{ object.logo.url }}" style="height: 150px; width: 150px;"></div>
+        {% endfor %}
+
+      <!--<div class="slide"><img src="{% static 'img/paypal.svg' %}" style="height: 150px; width: 150px;"></div>
+      <div class="slide"><img src="{% static 'img/google.png' %}"  style="height: 150px; width: 150px;"></div>
+      <div class="slide"><img src="images/image1.png"></div>
+      <div class="slide"><img src="images/image2.png"></div>
+      <div class="slide"><img src="images/image3.png"></div>
+      <div class="slide"><img src="images/image4.png"></div>
+      <div class="slide"><img src="images/image5.png"></div>
+      <div class="slide"><img src="images/image6.png"></div>
+      <div class="slide"><img src="images/image7.png"></div>
+      <div class="slide"><img src="images/image8.png"></div>-->
+   </section>
+</div>
+
+        <!-- End Section -->
+    </main>
+    <!-- End Main -->
+    
+{% endblock content %}

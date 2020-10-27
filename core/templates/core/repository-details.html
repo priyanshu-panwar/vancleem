@@ -1,35 +1,48 @@
-{% extends 'core/base_inner.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
 
 {% block content %}
 
+		<span id="header_shadow"></span>
+		<!-- /TOP NAV -->
 
-    <!-- Main -->
-    <main>
-        <!-- Home Banner -->
-        <section class="section parallax effect-section" style="background-image: url('{% static "img/montreal.jpg" %}');">
-            <div class="mask dark-bg opacity-8"></div>
-            <div class="container position-relative">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h6 class="white-color-light font-w-500">Repository</h6>
-                        <h1 class="display-4 white-color m-0px">{{ post.title }}</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Home Banner -->
-        <!-- Section -->
-        <section class="section gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 p-40px-r lg-p-15px-r md-m-15px-tb">
-                        <div class="article box-shadow">
-                            <div class="article-img">
-                                <img src="{{ post.image.url }}" title="" alt="">
-                            </div>
+		<!-- WRAPPER -->
+		<div id="wrapper">
 
-                            <div class="article-title">
+			<div id="blog">
+
+				<!-- PAGE TITLE -->
+				<header id="page-title">
+					<div class="container">
+						<h1>Repository</h1>
+
+						<ul class="breadcrumb">
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'post-home' %}">Repository</a></li>
+							<li class="active">FuzzyWuzzy text matching</li>
+						</ul>
+					</div>
+				</header>
+
+				<section class="container">
+
+					<div class="row">
+						<div class="left col-md-9">
+
+							<!-- article title -->
+							<header class="blog-post">
+								<h1>{{ post.title }}</h1>
+								<small class="fsize13">
+									{% for tag in post.tags.all %}
+                                <a class="label label-default light" href="{% url 'tagged' tag.slug %}"><i class="fa fa-dot-circle-o"></i> {{ tag }}</a>
+                                {% endfor %}
+									<span class="label label-default light">{{ post.date_posted|date:"M d, Y" }}</span>
+								</small>
+							</header>
+
+							<!-- article content -->
+							<article>
+								<div class="article-title">
                                 <p>{{ post.content }}</p>
                             </div>
 
@@ -44,118 +57,83 @@
                             {% endfor %}
 
 
-                            <div class="nav tag-cloud">
-                                {% for tag in post.tags.all %}
-                                <a href="{% url 'tagged' tag.slug %}">{{ tag }}</a>
+							</article>
+
+							<hr />
+
+							<!-- SOCIAL -->
+							<p class="socials">
+								<a href="#" class="rounded-icon social fa fa-linkedin"><!-- linkedin --></a>
+							</p>
+
+							<!-- TAGS -->
+							<p class="fsize16"> Tags:
+								{% for tag in post.tags.all %}
+                                <a class="label label-default light" href="{% url 'tagged' tag.slug %}"><i class="fa fa-tags"></i> {{ tag }}</a>
                                 {% endfor %}
-                            </div>
+                            	
+							</p>
 
-                        </div>
-                        <div class="contact-form article-comment box-shadow">
-                            <h4>Send a comment</h4>
-                            <form id="contact-form">
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input name="Name" id="name" placeholder="Name *" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input name="Email" id="email" placeholder="Email *" class="form-control" type="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="send">
-                                            <button class="m-btn m-btn-theme" type="submit"><span>Submit</span> <i class="arrow"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 md-m-15px-tb">
-                        <div class="card">
-                            <div class="card-header bg-transparent">
-                                <span class="h6 m-0px">Search</span>
-                            </div>
-                            <div class="p-20px">
-                                <form class="d-flex flex-column flex-md-row m-5px-b input-group">
-                                    <input type="text" name="tag_search" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Search By Tags">
-                                    <button class="m-btn m-btn-theme m-btn-radius flex-shrink-0" type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="card m-35px-t">
-                            <div class="card-header bg-transparent">
-                                <span class="h6 m-0px">Categories</span>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                
-                                {% for category in categories %}
 
-                                <a href="{% url 'post-category' category.id %}" class="list-group-item list-group-item-action d-flex justify-content-between p15px-tb">
-                                    <div>
-                                        <span>{{ category.title }}</span>
-                                    </div>
-                                    <div>
-                                        <i class="ti-angle-right"></i>
-                                    </div>
-                                </a>
 
-                                {% endfor %}
-                                
-                            </div>
-                        </div>
-                        <div class="card m-35px-t">
-                            <div class="card-header bg-transparent">
-                                <span class="h6 m-0px">Recent Posts</span>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                {% for post in recent_posts %}
+						</div>
 
-                                <a href="{% url 'post-detail' post.id %}" class="list-group-item list-group-item-action d-flex p15px-tb">
-                                    <div>
-                                        <div class="avatar-50 border-radius-5">
-                                            <img src="{{ post.image.url }}" title="" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="p-15px-l">
-                                        <p class="m-0px">{{ post.title }}</p>
-                                    </div>
-                                </a>
 
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div class="card m-35px-t">
-                            <div class="card-header bg-transparent">
-                                <span class="h6 m-0px">Tags</span>
-                            </div>
-                            <div class="p-20px">
-                                <div class="nav tag-cloud">
-                                    
-                                    {% for tag in common_tags %}
+						<!-- SIDEBAR -->
+						<aside class="right col-md-3">
 
-                                    <a href="{% url 'tagged' tag.slug %}">{{ tag }}</a>
+							<!-- blog search -->
+							<div class="widget">
 
-                                    {% endfor %}
+								<h3>SEARCH</h3>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Section -->
-    </main>
-    <!-- End Main -->
+								<form method="get" action="#" class="input-group">
+									<input type="text" class="form-control" name="tag_search" id="k" value="" placeholder="search..." />
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+									</span>
+								</form>
+							</div>
+
+
+							<!-- categories -->
+							<div class="widget">
+
+								<h4>CATEGORIES</h4>
+
+								<ul class="nav nav-list">
+									{% for category in categories %}
+									<li><a href="{% url 'post-category' category.id %}"><i class="fa fa-circle-o"></i> {{ category.title }}</a></li>
+									{% endfor %}
+								</ul>
+
+							</div>
+
+							<!-- recent posts -->
+							<div class="widget">
+
+								<h4>RECENTLY ADDED</h4>
+
+								<ul>
+									{% for post in recent_posts %}
+									<li><a href="{% url 'post-detail' post.id %}"><i class="fa fa-sign-out"></i> {{ post.title }}</a> <small>{{ post.date_posted|date:"M d, Y" }}</small></li>
+									{% endfor %}
+								</ul>
+
+							</div>
+
+						</aside>
+						<!-- /SIDEBAR -->
+
+					</div>
+
+
+				</section>
+
+			</div>
+		</div>
+		<!-- /WRAPPER -->
+
+
 
 {% endblock content %}

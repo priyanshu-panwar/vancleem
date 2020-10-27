@@ -1,325 +1,256 @@
 {% load static %}
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>DataScript</title>
+        <meta name="keywords" content="HTML5,CSS3,Template" />
+        <meta name="description" content="" />
+        <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
-<head>
-    <!-- metas -->
-    <meta charset="utf-8">
-    <meta name="author" content="pxdraft" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Moxom - Multipurpose Responsive Template" />
-    <meta name="description" content="Moxom - Multipurpose Responsive Template" />
-    <!-- title -->
-    <title>vanCleem - Solutions</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <!-- plugin CSS -->
-    <link href="{% static 'plugin/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'plugin/font-awesome/css/all.min.css' %}" rel="stylesheet">
-    <link href="{% static 'plugin/et-line/style.css' %}" rel="stylesheet">
-    <link href="{% static 'plugin/themify-icons/themify-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'plugin/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
-    <link href="{% static 'plugin/owl-carousel/css/owl.carousel.min.css' %}" rel="stylesheet">
-    <link href="{% static 'plugin/magnific/magnific-popup.css' %}" rel="stylesheet">
-    <!-- theme css -->
-    <link href="{% static 'style/master.css' %}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-      <script>
-      $(function() {
-        $(".video").click(function () {
-          var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-          $(theModal + ' iframe').attr('src', videoSRCauto);
-          $(theModal + ' button.close').click(function () {
-            $(theModal + ' iframe').attr('src', videoSRC);
-          });
-        });
-      });
-      </script>
-    <style>
+        <!-- mobile settings -->
+        <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
-        /* Slider */
-        .slick-slide {
-            margin: 0px 20px;
-        }
-        .slick-slide img {
-            width: 100%;
-        }
-        .slick-slider
-        {
-            position: relative;
-            display: block;
-            box-sizing: border-box;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-                    user-select: none;
-            -webkit-touch-callout: none;
-            -khtml-user-select: none;
-            -ms-touch-action: pan-y;
-                touch-action: pan-y;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .slick-list
-        {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-        .slick-list:focus
-        {
-            outline: none;
-        }
-        .slick-list.dragging
-        {
-            cursor: pointer;
-            cursor: hand;
-        }
-        .slick-slider .slick-track,
-        .slick-slider .slick-list
-        {
-            -webkit-transform: translate3d(0, 0, 0);
-               -moz-transform: translate3d(0, 0, 0);
-                -ms-transform: translate3d(0, 0, 0);
-                 -o-transform: translate3d(0, 0, 0);
-                    transform: translate3d(0, 0, 0);
-        }
-        .slick-track
-        {
-            position: relative;
-            top: 0;
-            left: 0;
-            display: block;
-        }
-        .slick-track:before,
-        .slick-track:after
-        {
-            display: table;
-            content: '';
-        }
-        .slick-track:after
-        {
-            clear: both;
-        }
-        .slick-loading .slick-track
-        {
-            visibility: hidden;
-        }
-        .slick-slide
-        {
-            display: none;
-            float: left;
-            height: 100%;
-            min-height: 1px;
-        }
-        [dir='rtl'] .slick-slide
-        {
-            float: right;
-        }
-        .slick-slide img
-        {
-            display: block;
-        }
-        .slick-slide.slick-loading img
-        {
-            display: none;
-        }
-        .slick-slide.dragging img
-        {
-            pointer-events: none;
-        }
-        .slick-initialized .slick-slide
-        {
-            display: block;
-        }
-        .slick-loading .slick-slide
-        {
-            visibility: hidden;
-        }
-        .slick-vertical .slick-slide
-        {
-            display: block;
-            height: auto;
-            border: 1px solid transparent;
-        }
-        .slick-arrow.slick-hidden {
-            display: none;
-        }
-    </style>
-</head>
-<!-- Body Start -->
+        <!-- WEB FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet" type="text/css" />
 
-<body data-spy="scroll" data-target="#navbar-collapse-toggle" data-offset="98">
-    <!-- Preload -->
-    <div id="loading">
-        <div class="load-circle"><span class="one"></span></div>
-    </div>
-    <!-- End Preload -->
-    <!-- Header -->
-    <header class="header-nav header-white header-transparent">
-        <div class="fixed-header-bar">
-            <!-- Header Nav -->
-            <div class="navbar navbar-main navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="{% url 'home' %}">
-                        <img class="logo-dark" alt="" title="" src="{% static 'img/logo-bleu.png' %}">
-                        <img class="logo-light" alt="" title="" src="{% static 'img/logo-white.png' %}">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse navbar-collapse-overlay" id="navbar-main-collapse">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'home' %}">Home</a>
-                                <i class="fa fa-angle-down px-nav-toggle"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'experience' %}">Experience</a>
-                                <i class="fa fa-angle-down px-nav-toggle"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'solutions' %}">Solutions</a>
-                                <i class="fa fa-angle-down px-nav-toggle"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'work' %}">Work</a>
-                                <i class="fa fa-angle-down px-nav-toggle"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'post-home' %}">Repository</a>
-                                <i class="fa fa-angle-down px-nav-toggle"></i>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                            </li>
-                        </ul>
-                        <a class="d-none d-lg-inline-block m-btn m-btn-radius m-btn-theme2nd m-btn-sm m-20px-l" href="https://vancleem.com/admin">Login</a>
-                    </div>
+        <!-- CORE CSS -->
+        <link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/plugins/owl-carousel/owl.carousel.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/plugins/owl-carousel/owl.theme.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/plugins/owl-carousel/owl.transitions.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/plugins/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/superslides.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- REVOLUTION SLIDER -->
+        <link href="{% static 'assets/plugins/slider.revolution.v4/css/settings.css' %}" rel="stylesheet" type="text/css" />
+
+        <link href="{% static 'assets/css/blog.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- THEME CSS -->
+        <link href="{% static 'assets/css/essentials.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/layout.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/layout-responsive.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/css/shop.css' %}" rel="stylesheet" type="text/css" /><!-- SHOP -->
+        <link href="{% static 'assets/css/color_scheme/darkblue.css' %}" rel="stylesheet" type="text/css" /><!-- orange: default style -->
+        <!-- <link id="css_dark_skin" href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" />--><!-- DARK SKIN -->
+
+        <!-- styleswitcher - demo only -->
+        <link href="{% static 'assets/css/color_scheme/orange.css' %}" rel="alternate stylesheet" type="text/css" title="orange" />
+        <link href="{% static 'assets/css/color_scheme/red.css' %}" rel="alternate stylesheet" type="text/css" title="red" />
+        <link href="{% static 'assets/css/color_scheme/pink.css' %}" rel="alternate stylesheet" type="text/css" title="pink" />
+        <link href="{% static 'assets/css/color_scheme/yellow.css' %}' %}' %}" rel="alternate stylesheet" type="text/css" title="yellow" />
+        <link href="{% static 'assets/css/color_scheme/darkgreen.css' %}' %}" rel="alternate stylesheet" type="text/css" title="darkgreen" />
+        <link href="{% static 'assets/css/color_scheme/green.css' %}" rel="alternate stylesheet" type="text/css" title="green" />
+        <link href="{% static 'assets/css/color_scheme/darkblue.css' %}" rel="alternate stylesheet" type="text/css" title="darkblue" />
+        <link href="{% static 'assets/css/color_scheme/blue.css' %}" rel="alternate stylesheet" type="text/css" title="blue" />
+        <link href="{% static 'assets/css/color_scheme/brown.css' %}" rel="alternate stylesheet" type="text/css" title="brown" />
+        <link href="{% static 'assets/css/color_scheme/lightgrey.css' %}' %}" rel="alternate stylesheet" type="text/css" title="lightgrey" />
+        <!-- /styleswitcher - demo only -->
+
+        <!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
+        <link href="{% static 'assets/plugins/styleswitcher/styleswitcher.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- Morenizr -->
+        <script type="text/javascript" src="{% static 'assets/plugins/modernizr.min.js' %}"></script>
+    </head>
+    <body><!-- Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="assets/images/boxed_background/1.jpg"  -->
+
+        <!-- Top Bar -->
+        <header id="topHead">
+            <div class="container">
+
+                <!-- PHONE/EMAIL -->
+                <span class="quick-contact pull-left">
+                    <i class="fa fa-phone"></i> +1 514-978-9422 &bull;
+                    <a class="hidden-xs" href="mailto:info@datascript.dev">info@datascript.dev</a>
+                </span>
+                <!-- /PHONE/EMAIL -->
+
+
+                <!-- SIGN IN -->
+                <div class="pull-right nav signin-dd">
+                    <a href="https://datascript.dev/admin"><i class="fa fa-users"></i><span class="hidden-xs"> Connexion</span></a>
                 </div>
+                <!-- /SIGN IN -->
+
             </div>
-            <!-- End Header Nav -->
-        </div>
-    </header>
-    <!-- Header End -->
+        </header>
+        <!-- /Top Bar -->
+
+        <!-- TOP NAV -->
+        <header id="topNav" class="topHead"><!-- remove class="topHead" if no topHead used! -->
+            <div class="container">
+
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Logo text or image -->
+                <a class="logo" href="{% url 'home' %}">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="Atropos" />
+                </a>
+
+                <!-- Top Nav -->
+                <div class="navbar-collapse nav-main-collapse collapse pull-right">
+                    <nav class="nav-main mega-menu">
+                        <ul class="nav nav-pills nav-main scroll-menu" id="topMain">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'solutions' %}">Services</a></li>
+              <li><a href="{% url 'project' %}">Projects</a></li>
+                            <li><a href="{% url 'post-home' %}">Repository</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <!-- GLOBAL SEARCH -->
+                            <li class="search">
+                                <!-- search form -->
+                                <form method="get" action="#" class="input-group pull-right">
+                                    <input type="text" class="form-control" name="k" id="k" value="" placeholder="Rechercher">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary notransition"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </form>
+                                <!-- /search form -->
+                            </li>
+                            <!-- /GLOBAL SEARCH -->
+
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /Top Nav -->
+
+            </div>
+
+        </header>    <!-- Header End -->
 
     {% block content %}
 
     {% endblock content %}
 
-    <!-- Footer-->
-    <footer class="dark-bg footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 m-15px-tb">
-                        <img src="{% static 'img/logo-white.png' %}" title="" alt="">
-                    </div>
-                    <div class="col-6 col-lg-2 m-15px-tb">
-                        <h5 class="white-color footer-title">
-                            Useful
-                        </h5>
-                        <ul class="list-unstyled links-white footer-link-1">
-                            <li>
-                                <a href="#">Apps Store</a>
-                            </li>
-                            <li>
-                                <a href="#">Google Store</a>
-                            </li>
-                            <li>
-                                <a href="#">Latest News</a>
-                            </li>
-                            <li>
-                                <a href="#">Our Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-lg-2 m-15px-tb">
-                        <h5 class="white-color footer-title">
-                            Services
-                        </h5>
-                        <ul class="list-unstyled links-white footer-link-1">
-                            <li>
-                                <a href="#">Documentation</a>
-                            </li>
-                            <li>
-                                <a href="#">Changelog</a>
-                            </li>
-                            <li>
-                                <a href="#">Pagebuilder</a>
-                            </li>
-                            <li>
-                                <a href="#">Web Services</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-5 m-15px-tb">
-                        <h5 class="white-color footer-title">
-                            Stay up to date
-                        </h5>
-                        <form>
-                            <div class="d-flex flex-column flex-md-row m-5px-b">
-                                <input type="email" class="form-control m-5px-r md-m-0px-r md-m-10px-b" placeholder="Enter your username">
-                                <button class="m-btn m-btn-theme2nd m-btn-radius flex-shrink-0" type="submit">Get Started</button>
+    <!-- FOOTER -->
+        <footer>
+
+            <!-- copyright , scrollTo Top -->
+            <div class="footer-bar">
+                <div class="container">
+                    <span class="copyright">&copy; Tous droits réservés. 2020 DataScript.dev</span>
+                    <a class="toTop" href="#topNav">RETOUR EN HAUT <i class="fa fa-arrow-circle-up"></i></a>
+                </div>
+            </div>
+            <!-- copyright , scrollTo Top -->
+
+
+            <!-- footer content -->
+            <div class="footer-content">
+                <div class="container">
+
+                    <div class="row">
+
+
+                        <!-- FOOTER CONTACT INFO -->
+                        <div class="column col-md-4">
+                            <h3>CONTACT</h3>
+
+                            <address class="font-opensans">
+                                <ul>
+                                    <li class="footer-sprite address">
+                                        Montreal, Canada
+                                    </li>
+                                    <li class="footer-sprite phone">
+                                        Tél : +1 514-978-9422<br />
+                                        Fax : +1 514-978-9422
+                                    </li>
+                                    <li class="footer-sprite email">
+                                        <a href="mailto:info@datascript.dev">info@datascript.dev</a>
+                                    </li>
+                                </ul>
+                            </address>
+
+                        </div>
+                        <!-- /FOOTER CONTACT INFO -->
+
+
+                        <!-- FOOTER LOGO -->
+                        <div class="column logo col-md-4 text-center">
+                            <div class="logo-content">
+                                <img class="animate_fade_in" src="{% static 'assets/images/logo_footer.png' %}" width="200" alt="" />
+                                <p>Site réalisé par <a href="https://datascript.dev" target="_blank"> DataScript.dev</a></p>
                             </div>
-                            <p class="white-color-light m-0px font-small p-10px-t">New UI kits or big discounts. Never spam.</p>
-                        </form>
+                        </div>
+                        <!-- /FOOTER LOGO -->
+
+
+                        <!-- FOOTER LATEST POSTS -->
+                        <div class="column col-md-4 text-right">
+                            <h3>AUTRES INFORMATIONS</h3>
+
+                            <div class="post-item">
+                                <h3><a href="blog-single-sidebar-left.html">FAQ - Foire aux Questions</a></h3>
+                            </div>
+                            <div class="post-item">
+                                <h3><a href="blog-single-sidebar-left.html">Conditions Générales</a></h3>
+                            </div>
+                            <div class="post-item">
+                                <h3><a href="blog-single-sidebar-left.html">Politique de Confidentialité</a></h3>
+                            </div>
+
+                        </div>
+                        <!-- /FOOTER LATEST POSTS -->
+
                     </div>
+
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom border-style top light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right m-5px-tb">
-                        <ul class="nav justify-content-center justify-content-md-start links-white font-small footer-link-1">
-                            <li><a href="#">Privace &amp; Policy</a></li>
-                            <li><a href="#">Faq's</a></li>
-                            <li><a href="#">Get a Quote</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-center text-md-right m-5px-tb">
-                        <p class="m-0px font-small white-color-light">© 2020 copyright all right reserved</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
-    <!-- jquery -->
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'js/jquery-migrate-3.0.0.min.js' %}"></script>
-    <!-- end jquery -->
-    <!-- appear -->
-    <script src="{% static 'plugin/appear/jquery.appear.js' %}"></script>
-    <!-- end appear -->
-    <!--bootstrap-->
-    <script src="{% static 'plugin/bootstrap/js/popper.min.js' %}"></script>
-    <script src="{% static 'plugin/bootstrap/js/bootstrap.js' %}"></script>
-    <!--end bootstrap-->
-    <!-- End -->
-    <!-- custom js -->
-    <script src="{% static 'js/custom.js' %}"></script>
-    <script src="{% static 'plugin/cookie/herbyCookie.js' %}"></script>
-    <script src="{% static 'plugin/cookie/herbyCookie.min.js' %}"></script>
-    <script src="{% static 'plugin/jarallax/jarallax-all.js' %}"></script>
-    <script src="{% static 'plugin/jarallax/jarallax-video.min.js' %}"></script>
-    <script src="{% static 'plugin/owl-carousel/js/owl.carousel.js' %}"></script>
-    <!-- end -->
+            <!-- footer content -->
 
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        </footer>
+        <!-- /FOOTER -->
 
-    <script src="{% static 'js/carousel.js' %}"></script>
-    <!-- end -->
-</body>
-<!-- end body -->
 
+
+        <!-- JAVASCRIPT FILES -->
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-2.2.3.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery.easing.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery.cookie.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery.appear.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery.isotope.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/masonry.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/stellar/jquery.stellar.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/knob/js/jquery.knob.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery.backstretch.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/superslides/dist/jquery.superslides.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/styleswitcher/styleswitcher.js' %}"></script><!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
+        <script type="text/javascript" src="{% static 'assets/plugins/mediaelement/build/mediaelement-and-player.min.js' %}"></script>
+
+        <!-- REVOLUTION SLIDER -->
+        <script type="text/javascript" src="{% static 'assets/plugins/slider.revolution.v4/js/jquery.themepunch.tools.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/plugins/slider.revolution.v4/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/js/slider_revolution.js' %}"></script>
+
+
+        <script type="text/javascript" src="{% static 'assets/js/scripts.js' %}"></script>
+
+
+        <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+        <!--<script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-XXXXX-X', 'domainname.com');
+            ga('send', 'pageview');
+        </script>
+        -->
+
+    </body>
 </html>

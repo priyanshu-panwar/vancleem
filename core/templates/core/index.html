@@ -3,302 +3,173 @@
 
 {% block content %}
 
-    <!-- Main -->
-    <main>
-        <!-- Home Banner -->
-        <section class="effect-section theme-bg">
-            <div class="shap-top-left opacity-1">
-                <img src="static/img/effect/style-1.svg" title="" alt="" class="svg_img dark-color">
-            </div>
-            <div class="shap-bottom-right opacity-1">
-                <img src="static/img/effect/style-2.svg" title="" alt="" class="svg_img dark-color">
-            </div>
-            <div class="svg-bottom">
-                <img src="static/img/effect/divider-2.svg" title="" alt="" class="svg_img gray-color">
-            </div>
-            <div class="container">
-                <div class="row full-screen align-items-center p-100px-t">
-                    <div class="col-lg-6 m-15px-tb">
-                        <h6 class="m-10px-b white-color">-  Based in Montreal (Canada)</h6>
-                        <h1 class="h1 m-10px-b white-color"><span class="font-w-300">Business Intelligence<br />&amp; Automation Consultant</h1>
-                        <p class="font-2 white-color-light">I am specialized in advanced analytics and I develop well-designed Power BI dashboards. I also create applications and automate processes using Python, VBA and Google AppScript. </p>
-                        <div class="p-20px-t m-btn-wide">
-                            <a class="m-btn m-btn-radius m-btn-white m-10px-r" href="{% url 'solutions' %}">
-                                <span class="m-btn-inner-text">Solutions</span>
-                                <span class="m-btn-inner-icon arrow"></span>
-                            </a>
-                            <a class="m-btn m-btn-radius m-btn-theme2nd" href="{% url 'contact' %}">
-                                <span class="m-btn-inner-text">Contact</span>
-                                <span class="m-btn-inner-icon arrow"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 m-15px-tb">
-                        <img class="max-width-120" src="static/img/gvancleem.svg" title="" alt="">
-                    </div>
+    <span id="header_shadow"></span>
+        <!-- /TOP NAV -->
+
+        <!-- WRAPPER -->
+        <div id="wrapper">
+
+            <!-- REVOLUTION SLIDER -->
+            <div class="fullwidthbanner-container roundedcorners">
+                <div class="fullwidthbanner">
+                    <ul>
+
+                        <!-- SLIDE 1 -->
+                        <li data-transition="3dcurtain-vertical" ddata-slotamount="15" data-masterspeed="300" data-delay="4000">
+
+                            <!-- COVER IMAGE -->
+                            <img src="{% static 'assets/images/demo/revolution_slider/sliderbg.jpg' %}" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="yes-repeat">
+
+                            <div class="tp-caption large_bold_white lfl stl"
+                                data-x="18"
+                                data-y="210"
+                                data-speed="1000"
+                                data-start="200"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="300" data-endeasing="easeInSine">Apps Script
+                            </div>
+
+                            <div class="tp-caption large_bold_grey medium_thin_grey lfl"
+                                data-x="18"
+                                data-y="169"
+                                data-speed="1000"
+                                data-start="300"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="1000" data-endeasing="easeInSine">Google
+                                <!-- <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">Development</a> -->
+                            </div>
+
+                            <div class="tp-caption lft"
+                                data-x="right" data-hoffset="-20"
+                                data-y="75"
+                                data-speed="1000"
+                                data-start="500"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="1000" data-endeasing="easeInSine">
+                                <a href="shop-product-full-width.html"><img src="assets/images/service-google-apps-script.png" alt="Image 1"></a>
+                            </div>
+
+                            <div class="tp-caption medium_bg_darkblue sft stb"
+                                data-x="26"
+                                data-y="283"
+                                data-speed="1000"
+                                data-start="400"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="1000" data-endeasing="easeInSine">DEVELOPMENT
+                            </div>
+
+                        </li>
+
+                        <!-- SLIDE 2 -->
+                        <li data-transition="3dcurtain-vertical" ddata-slotamount="15" data-masterspeed="300" data-delay="4000">
+
+                            <!-- COVER IMAGE -->
+                            <img src="{% static 'assets/images/demo/revolution_slider/sliderbg.jpg' %}" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="yes-repeat">
+
+                            <div class="tp-caption large_bold_grey lfl stl"
+                                data-x="18"
+                                data-y="210"
+                                data-speed="1000"
+                                data-start="200"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="10000" data-endeasing="easeInSine">AUTOMOBILE
+                            </div>
+
+                            <div class="tp-caption large_bold_grey medium_thin_grey lfl"
+                                data-x="18"
+                                data-y="169"
+                                data-speed="1000"
+                                data-start="300"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="10000" data-endeasing="easeInSine">
+                                <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">GAMME</a>
+                            </div>
+
+                            <div class="tp-caption lft"
+                                data-x="right" data-hoffset="-20"
+                                data-y="75"
+                                data-speed="1000"
+                                data-start="500"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="1000" data-endeasing="easeInSine">
+                                <a href="shop-product-full-width.html"><img src="assets/images/service-google-apps-script.png" alt="Image 1"></a>
+                            </div>
+
+                            <div class="tp-caption medium_bg_darkblue sft stb"
+                                data-x="26"
+                                data-y="283"
+                                data-speed="1000"
+                                data-start="400"
+                                data-easing="easeOutExpo" data-end="3900" data-endspeed="1000" data-endeasing="easeInSine">PRODUCTION LOCALE
+                            </div>
+
+                        </li>
+
+
+                    </ul>
+                    <div class="tp-bannertimer"></div>
                 </div>
             </div>
-        </section>
-        <!-- End Home Banner -->
-        <!-- Section -->
-        <section class="section gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 m-15px-tb">
-                        <div class="p-50px-r lg-p-0px-r">
-                            <img class="float-right max-width-140" src="static/img/business-intelligence.svg" title="" alt="">
-                        </div>
+            <!-- /REVOLUTION SLIDER -->
+
+
+            <section class="container">
+
+                <hr />
+
+                <article class="row">
+                    <div class="col-md-6">
+                            <img src="{% static 'assets/images/grant-van-cleemput.jpg' %}" alt="" class="img-thumbnail" />
                     </div>
-                    <div class="col-lg-6 m-15px-tb">
-                        <h6 class="theme-color m-10px-b">Effective solutions</h6>
-                        <h2 class="m-25px-b">I have a track record in delivering value to my clients.</h2>
-                        <p>I have my client's best interests at heart and I am focused on their needs and achieving their goals.</p>
-                        <div class="row p-20px-t">
-                            <div class="col-sm-6 m-15px-tb">
-                                <div class="lg-width-80">
-                                    <div class="icon-50 m-20px-b">
-                                        <img src="static/img/104-loupe.svg" title="" alt="">
-                                    </div>
-                                    <h6>Domain Expertise</h6>
-                                    <p class="m-0px">Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
+                <div class="col-md-6">
+                        <h3>About<strong>  Grant Van Cleemput</strong> (MBA)</h3>
+                        <p>Grant has close to 20 years of experience in the Travel, Financial Services and Aerospace Industries. The core of his expertise is centered around Sales, Pricing, Benchmarking, Forecasting, Revenue Management and Yield Management.</p>
+                        <p>He engages with stakeholders and knowledge experts to understand the needs of his clients and designs the appropriate solutions..</p>
+
+                        <hr />
+                        <h4>Objectives</h4>
+                        <ul class="list-icon star-o">
+                            <li>Provide advanced analytics to support decision making.</li>
+                            <li>Assist in uncovering new opportunities</li>
+                            <li>Improve strategy with clear actionable data</li>
+                            <li>Increase productivity by automating repetitive tasks</li>
+                            <li>Reduce errors and rework through process automation</li>
+                        </ul>
+                </div>
+                </article>
+
+                <hr />
+
+
+             <h2 align="center">Testimonials</h2>
+
+
+                    <div class="row">
+                        <div class="col-md-126">
+
+                            <div class="owl-carousel text-center" data-plugin-options='{"items": 1, "singleItem": true, "navigation": false, "pagination": true, "autoPlay": true, "transitionStyle":"fadeUp"}'><!-- transitionStyle: fade, backSlide, goDown, fadeUp,  -->
+                                <div class="testimonial color2">
+                                    <p>Praesent est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+                                    <cite><strong>John Doe</strong>, Customer</cite>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 m-15px-tb">
-                                <div class="lg-width-80">
-                                    <div class="icon-50 m-20px-b">
-                                        <img src="static/img/101-interest.svg" title="" alt="">
-                                    </div>
-                                    <h6>Solutions & Analytics</h6>
-                                    <p class="m-0px">Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
+
+                                <div class="testimonial color2">
+                                    <p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor. Donec tellus massa.</p>
+                                    <cite><strong>Jessica Doe</strong>, Customer</cite>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Section -->
-        <!-- Section -->
-        <section class="section">
-            <div class="container">
-                <div class="row md-m-25px-b m-40px-b justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h6 class="theme-color">Testimonials</h6>
-                        <h3 class="h1 m-15px-b">What clients say about me.</h3>
-                        <p class="m-0px font-2">Moxom is a HTML5 template based on Sass and Bootstrap 4 with modern and creative multipurpose design you can use it as a startups.</p>
-                    </div>
-                </div>
-                <div class="owl-carousel" data-items="3" data-nav-dots="true" data-md-items="2" data-sm-items="2" data-xs-items="1" data-xx-items="1" data-space="0" data-autoplay="true">
-                    <div class="card p-25px box-shadow m-15px">
-                        <p class="m-0px">I wanted to hire the best and after looking at several other companies, I knew Jacob was the perfect guy for the job. He is a true professional.</p>
-                        <div class="media m-20px-t">
-                            <div class="avatar-60 border-radius-50">
-                                <img src="static/img/xs-size.jpg" alt="" title="">
-                            </div>
-                            <div class="media-body p-15px-l align-self-center">
-                                <h6 class="m-0px">Shoko Mugikura</h6>
-                                <span class="font-small">Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="card p-25px box-shadow m-15px">
-                        <p class="m-0px">I wanted to hire the best and after looking at several other companies, I knew Jacob was the perfect guy for the job. He is a true professional.</p>
-                        <div class="media m-20px-t">
-                            <div class="avatar-60 border-radius-50">
-                                <img src="static/img/xs-size.jpg" alt="" title="">
-                            </div>
-                            <div class="media-body p-15px-l align-self-center">
-                                <h6 class="m-0px">Shoko Mugikura</h6>
-                                <span class="font-small">Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card p-25px box-shadow m-15px">
-                        <p class="m-0px">I wanted to hire the best and after looking at several other companies, I knew Jacob was the perfect guy for the job. He is a true professional.</p>
-                        <div class="media m-20px-t">
-                            <div class="avatar-60 border-radius-50">
-                                <img src="static/img/xs-size.jpg" alt="" title="">
-                            </div>
-                            <div class="media-body p-15px-l align-self-center">
-                                <h6 class="m-0px">Shoko Mugikura</h6>
-                                <span class="font-small">Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card p-25px box-shadow m-15px">
-                        <p class="m-0px">I wanted to hire the best and after looking at several other companies, I knew Jacob was the perfect guy for the job. He is a true professional.</p>
-                        <div class="media m-20px-t">
-                            <div class="avatar-60 border-radius-50">
-                                <img src="static/img/xs-size.jpg" alt="" title="">
-                            </div>
-                            <div class="media-body p-15px-l align-self-center">
-                                <h6 class="m-0px">Shoko Mugikura</h6>
-                                <span class="font-small">Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Section -->
-        <!-- Section -->
-        <section class="section  gray-bg">
-            <div class="container">
-                <div class="row md-m-25px-b m-40px-b justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h6 class="theme-color">Featured</h6>
-                        <h3 class="h1 m-15px-b">Most recent work.</h3>
-                        <p class="m-0px font-2">Here are some of the  latest business intelligence, data analytics and process automation projects that I have worked on.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    {% for work in works %}
-
-                    <div class="col-lg-4 m-15px-tb">
-                        <div class="card blog-grid-1 box-shadow-hover">
-                            <div class="blog-img">
-                                <a class="video-btn theme p-center video" href="{{ work.video }}" data-video="{{ work.video }}"  data-toggle="modal" data-target="#videoModal"><span></span></a>
-                                <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-body">
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                      <iframe width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                  </div>
+                                <div class="testimonial color2">
+                                    <p>Praesent est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+                                    <cite><strong>Dorin Doe</strong>, Customer</cite>
                                 </div>
-                              </div>
-                                <a href="#">
-                                    <img src="{% static 'img/post_background_1.jpg' %}" title="" alt="" >
-                            <span></span>
-                        </a>
-                            </div>
-                            <div class="card-body blog-info">
-                                <h5>
-                                    <a href="#">{{ work.title }}</a>
-                                </h5>
-                                <p class="m-0px">{{ work.description|truncatechars:150 }}</p>
-                                <div class="btn-bar">
-                                    <a class="m-link-theme" href="#">{{ work.client }}</a>
+
+                                <div class="testimonial color2">
+                                    <p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor. Donec tellus massa.</p>
+                                    <cite><strong>Melissa Doe</strong>, Customer</cite>
                                 </div>
-                            </div>
-                        </div>
+                            <div>
+
                     </div>
-                    {% endfor %}
-                    <!--<div class="col-lg-4 m-15px-tb">
-                        <div class="card blog-grid-1 box-shadow-hover">
-                            <div class="blog-img">
-                                <a class="video-btn theme popup-youtube p-center" href="https://www.youtube.com/watch?v=dNIfsv1rKJo"><span></span></a>
-                                <a href="#">
-                                    <img src="static/img/post_background_2.jpg" title="" alt="">
-                            </div>
-                            <div class="card-body blog-info">
-                                <h5>
-                                    <a href="#">Power BI Sales Dashboard with Python scripts.</a>
-                                </h5>
-                                <p class="m-0px">Power BI Dashboards with extensive data manipulation and process  automation using Python...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 m-15px-tb">
-                        <div class="card blog-grid-1 box-shadow-hover">
-                            <div class="blog-img">
-                                <a class="video-btn theme popup-youtube p-center" href="https://www.youtube.com/watch?v=dNIfsv1rKJo"><span></span></a>
-                                <a href="#">
-                                    <img src="static/img/post_background_2.jpg" title="" alt="">
-                            </div>
-                            <div class="card-body blog-info">
-                                <h5>
-                                    <a href="#">Email Reports from Microsoft Access using VBA.</a>
-                                </h5>
-                                <p class="m-0px">A sales dashboard which allows the user to send selected reports from Outlook to selected recipients...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 m-15px-tb">
-                        <div class="card blog-grid-1 box-shadow-hover">
-                            <div class="blog-img">
-                                <a class="video-btn theme popup-youtube p-center" href="https://www.youtube.com/watch?v=dNIfsv1rKJo"><span></span></a>
-                                <a href="#">
-                                    <img src="static/img/post_background_2.jpg" title="" alt="">
-                            </div>
-                            <div class="card-body blog-info">
-                                <h5>
-                                    <a href="#">Advanced pricing simulation with Python.</a>
-                                </h5>
-                                <p class="m-0px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum text...</p>
-                            </div>
-                        </div>
-                    </div>-->
+
                 </div>
-            </div>
-        </section>
-        <!-- End Section -->
-        <!-- Section -->
-        <section class="section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 m-15px-tb">
-                        <h6 class="theme-color m-10px-b">Business Intelligence & Process Automation</h6>
-                        <h3 class="h1 m-20px-b">Interested in finding out more about how we can help.</h3>
-                        <p class="m-0px">Don't hesitate to contact us so we can further discuss your project and needs.</p>
-                        <div class="p-25px-t row">
-                            <div class="col-sm-6">
-                                <ul class="list-type-01">
-                                    <li>Data driven Solutions</li>
-                                    <li>Data Visualization</li>
-                                    <li>Interactive Dashboards</li>
-                                    <li>Advanced Analytics</li>
-                                    <li>Data Processing (ETL)</li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-6">
-                                <ul class="list-type-01">
-                                    <li>External Data</li>
-                                    <li>Python Automation</li>
-                                    <li>Ms Excel + VBA</li>
-                                    <li>Ms Access + VBA</li>
-                                    <li>Google AppScript</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="p-30px-t">
-                            <a class="m-link-theme" href="#">Getting Started Docs</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 ml-auto m-15px-tb">
-                        <div class="box-shadow-lg card">
-                            <div class="card-body">
-                                <h5 class="dark-color m-20px-b">Get a free quote</h5>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone number">
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="3" placeholder="Your Comments"></textarea>
-                                    </div>
-                                    <div>
-                                        <button class="m-btn m-btn-theme m-btn-radius w-100">Get a quote</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Section -->
-    </main>
-    <!-- End Main -->
+
+            </section>
+
+        </div>
+        <!-- /WRAPPER -->
+
 
 {% endblock content %}

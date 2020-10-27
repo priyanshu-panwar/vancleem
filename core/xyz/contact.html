@@ -1,0 +1,115 @@
+{% extends 'core/base_inner.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Main -->
+    <main>
+        <!-- Home Banner -->
+        <section class="section parallax effect-section" style="background-image: url('{% static "img/montreal.jpg" %}');">
+            <div class="mask dark-bg opacity-8"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h1 class="display-4 white-color m-0px">Contact</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Home Banner -->
+        <!-- Section -->
+        <section class="section gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 m-15px-tb">
+                        <div class="box-shadow p-65px-tb p-40px-lr hover-top white-bg">
+                            <div class="m-30px-b only-icon-70 theme-color">
+                                <i class="icon-map"></i>
+                            </div>
+                            <h5 class="m-15px-b">Location</h5>
+                            <p class="m-0px">Montreal, Canada.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 m-15px-tb">
+                        <div class="box-shadow p-65px-tb p-40px-lr hover-top white-bg">
+                            <div class="m-30px-b only-icon-70 theme-color">
+                                <i class="icon-chat"></i>
+                            </div>
+                            <h5 class="m-15px-b">Let's Talk</h5>
+                            <p class="m-0px">Phone: 1-514-978-9422</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 m-15px-tb">
+                        <div class="box-shadow p-65px-tb p-40px-lr hover-top white-bg">
+                            <div class="m-30px-b only-icon-70 theme-color">
+                                <i class="icon-envelope"></i>
+                            </div>
+                            <h5 class="m-15px-b">Email Me</h5>
+                            <p class="m-0px links-dark">
+                                <a href="mailto:info@domain.com">grant@vancleem.com</a><br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Home Banner -->
+        <!-- Section -->
+        <section class="section">
+            <div class="container">
+                <div class="row md-m-25px-b m-40px-b justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <h3 class="h1 m-15px-b p-15px-b after-50 theme-after">Get in touch!</h3>
+                        <p class="m-0px font-2">Moxom is a HTML5 template based on Sass and Bootstrap 4 with modern and creative multipurpose design you can use it as a startups.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-9 col-xl-8">
+                        <form class="rd-mailform">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="contact-name">Your Name</label>
+                                        <input id="contact-name" type="text" name="contact-name" placeholder="Rachel Roth" data-constraints="@Required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="contact-email">Email Address</label>
+                                        <input id="contact-email" type="email" name="contact-email" placeholder="name@example.com" data-constraints="@Required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="contact-company">Company (optional)</label>
+                                        <input type="text" name="contact-company" class="form-control" id="contact-company">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="contact-phone">Phone (optional)</label>
+                                        <input type="tel" name="contact-phone" class="form-control" id="contact-phone">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="contact-message">Message</label>
+                                        <textarea class="form-control" id="contact-message" name="contact-message" rows="3" placeholder="Hi there, I would like to ..." data-constraints="@Required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="m-btn m-btn-theme m-btn-radius w-100" type="submit" name="send">Get Started</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+    </main>
+    <!-- End Main -->
+
+{% endblock content %}
