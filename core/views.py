@@ -1,9 +1,26 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Experience_Clients, Work, Post, Category, Comment, Contact
+from .models import Experience_Clients, Work, Post, Category, Comment, Contact, Service
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from django.core.mail import send_mail
 from vancleem.settings import EMAIL_HOST_USER, ADMIN_MAIL_1, ADMIN_MAIL_2
+
+
+def service_details(request, pk):
+	object = get_object_or_404(Service, pk=pk)
+	services = Service.objects.all()
+	context = {
+		'service' : object,
+		'services' : services,
+	}
+	return render(request, 'core/service_detail.html', context)
+
+def service(request):
+	services = Service.objects.all()
+	context = {
+		'services' : services,
+	}
+	return render(request, 'core/services.html', context)
 
 
 def project(request):
@@ -48,7 +65,14 @@ def work(request):
 	context = {
 		'works' : works,
 	}
-	return render(request, 'core/work.html', context)
+	return render(request, 'core/projects.html', context)
+
+def work_detail(request, pk):
+	object = get_object_or_404(Work, pk=pk)
+	context = {
+		'work' : object,
+	}
+	return render(request, 'core/project_detail.html', context)
 
 
 def is_valid_queryparam(param):
@@ -59,7 +83,6 @@ def post_home(request):
 	posts = Post.objects.all()
 	posts = posts[::-1]
 	recent_posts = posts[:4]
-
 	tag_search = request.GET.get('tag_search')
 	common_tags = Post.tags.most_common()[:4]
 
@@ -82,6 +105,7 @@ def post_home(request):
 
 	context = {
 		'posts' : posts,
+    	'cnt' : len(posts),
 		'recent_posts' : recent_posts,
 		'common_tags' : common_tags,
 		'categories' : categories,

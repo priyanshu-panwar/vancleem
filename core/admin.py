@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import Experience_Clients, Work, Post, Category, Comment, Contact, Code
+from .models import Experience_Clients, Service, Work, Post, Category, Comment, Contact, Code
 
 admin.site.register(Experience_Clients)
 admin.site.register(Category)
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+	list_display = ['title', 'subtitle']
 
 @admin.register(Work)
 class WorkAdmin(admin.ModelAdmin):

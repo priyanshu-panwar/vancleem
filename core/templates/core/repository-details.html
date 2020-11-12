@@ -50,8 +50,8 @@
 
                             <div class="article-content">
                                 <h4>{{ c.title }}</h4>
-                                <p>{{ c.description }}</p>
-                                <br>{{ c.code|safe }}<br>
+                                {{ c.description }}
+                                {{ c.code|safe }}<br>
                             </div>
 
                             {% endfor %}

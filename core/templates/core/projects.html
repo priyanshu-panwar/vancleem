@@ -1,0 +1,132 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+		<span id="header_shadow"></span>
+		<!-- /TOP NAV -->
+
+		<!-- WRAPPER -->
+		<div id="wrapper">
+
+			<!-- PAGE TITLE -->
+			<header id="page-title">
+				<div class="container">
+					<h1>Projects</h1>
+
+					<ul class="breadcrumb">
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li class="active">Projects</li>
+					</ul>
+				</div>
+			</header>
+
+			<section id="portfolio" class="container">
+
+				<h2><strong>Explore</strong> our projects</h2>
+
+				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.</p>
+
+				<!--<ul class="nav nav-pills isotope-filter isotope-filter" data-sort-id="isotope-list" data-option-key="filter">
+					<li data-option-value="*" class="active"><a href="#">Show All</a></li>
+					<li data-option-value=".analytics"><a href="#">Analytics</a></li>
+					<li data-option-value=".web"><a href="#">Web Development</a></li>
+					<li data-option-value=".design"><a href="#">Design</a></li>
+				</ul>-->
+
+
+				<div class="row">
+
+					<ul class="sort-destination isotope" data-sort-id="isotope-list">
+
+						{% for work in works %}
+
+						<li class="isotope-item col-sm-6 col-md-3 web"><!-- item -->
+							<div class="item-box">
+								<figure>
+									<a class="item-hover" href="{% url 'work-detail' work.id %}">
+										<span class="overlay color2"></span>
+										<span class="inner">
+											<span class="block fa fa-plus fsize20"></span>
+											<strong>PROJECT</strong> DETAILS
+										</span>
+									</a>
+									<img class="img-responsive" src="{{ work.image.url }}" width="260" height="260" align="" lt="">
+								</figure>
+								<div class="item-box-desc">
+									<h4>{{ work.title }}</h4>
+									<small class="styleColor">{{ work.date }}</small>
+								</div>
+							</div>
+						</li>
+
+						{% endfor %}
+
+					</ul>
+
+				</div><!-- /.masonry-container -->
+
+				<!-- CALLOUT -->
+				<div class="bs-callout text-center nomargin-bottom">
+					<h3>Do you like what you see?</h3>
+					<br/>
+					<a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i> CONTACT US !</a>
+				</div>
+				<!-- /CALLOUT -->
+
+
+			</section>
+
+		</div>
+		<!-- /WRAPPER -->
+
+					<!-- modal dialog -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+
+								<div class="modal-header"><!-- modal header -->
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="myModalLabel">Subject : Sofadig.net Web Application</h4>
+								</div><!-- /modal header -->
+
+								<!-- modal body -->
+								<div class="modal-body">
+									<form>
+										<div class="form-group">
+											<label for="exampleFormControlInput1">Full Name</label>
+											<input type="full name" class="form-control" id="exampleFormControlInput1" placeholder="First Name & Last Name">
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlInput1">Company Name</label>
+											<input type="company" class="form-control" id="exampleFormControlInput1" placeholder="My Company">
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlInput1">Telephone</label>
+											<input type="full name" class="form-control" id="exampleFormControlInput1" placeholder="Telephone">
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlInput1">Email address</label>
+											<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlTextarea1">Message</label>
+											<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+										</div>
+										<!-- <button type="submit" class="btn btn-primary">Valider</button> -->
+
+										</div>
+										<!-- /modal body -->
+
+									<div class="modal-footer"><!-- modal footer -->
+										<button class="btn btn-default" data-dismiss="modal">Cancel</button> <button class="btn btn-primary">Send</button>
+									</div><!-- /modal footer -->
+								</form>
+
+							</div>
+						</div>
+					</div>
+
+
+{% endblock content %}

@@ -1,0 +1,121 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+		<span id="header_shadow"></span>
+		<!-- /TOP NAV -->
+
+
+		<!-- WRAPPER -->
+		<div id="wrapper">
+
+			<!-- PAGE TITLE -->
+			<header id="page-title">
+
+				<div class="container">
+					<h1>Project Details</h1>
+
+					<ul class="breadcrumb">
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'work' %}">Projects</a></li>
+						<li class="active">Sofadig.net</li>
+					</ul>
+				</div>
+			</header>
+
+			<section id="portfolio" class="container">
+
+				<h2><strong>Sofadig.net</strong> Web Application</h2>
+
+				<div class="row">
+					<div class="col-sm-6 col-md-7">
+						<div class="owl-carousel controlls-over product-image" data-plugin-options='{"items": 1, "singleItem": true, "navigation": true, "pagination": true, "transitionStyle":"fadeUp"}'>
+							<div>
+								<img alt="" class="img-responsive" src="{{ work.image.url }}">
+							</div>
+							<div>
+								<img alt="" class="img-responsive" src="{{ work.image2.url }}">
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-sm-6 col-md-5">
+
+						<h4>About the project</h4>
+						<p>{{ work.description|safe }}</p>
+
+						<a href="{{ work.project_link }}" target="_blank" class="btn btn-primary btn-lg btn-margin-top"><i class="fa fa-external-link"></i> {{ work.title }}</a>
+					</div>
+				</div>
+
+
+
+				<hr />
+
+
+
+
+				<!-- CALLOUT -->
+				<div class="bs-callout text-center nomargin-bottom">
+					<h3>Do you like what you see?</h3>
+					<br/>
+					<a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope"></i> CONTACT US !</a>
+				</div>
+				<!-- /CALLOUT -->
+
+
+			</section>
+
+		</div>
+		<!-- /WRAPPER -->
+
+				<!-- modal dialog -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+
+							<div class="modal-header"><!-- modal header -->
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">Subject : Sofadig.net Web Application</h4>
+							</div><!-- /modal header -->
+
+							<!-- modal body -->
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="exampleFormControlInput1">Full Name</label>
+										<input type="full name" class="form-control" id="exampleFormControlInput1" placeholder="First Name & Last Name">
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlInput1">Company Name</label>
+										<input type="company" class="form-control" id="exampleFormControlInput1" placeholder="My Company">
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlInput1">Telephone</label>
+										<input type="full name" class="form-control" id="exampleFormControlInput1" placeholder="Telephone">
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlInput1">Email address</label>
+										<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlTextarea1">Message</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+									</div>
+									<!-- <button type="submit" class="btn btn-primary">Valider</button> -->
+
+									</div>
+									<!-- /modal body -->
+
+								<div class="modal-footer"><!-- modal footer -->
+									<button class="btn btn-default" data-dismiss="modal">Cancel</button> <button class="btn btn-primary">Send</button>
+								</div><!-- /modal footer -->
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+{% endblock content %}

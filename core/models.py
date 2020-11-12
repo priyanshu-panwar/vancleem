@@ -4,6 +4,15 @@ from django.urls import reverse
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 
+class Service(models.Model):
+	title = models.CharField(max_length=100, default='')
+	subtitle = models.CharField(max_length=100, default='')
+	description = models.TextField()
+	image = models.ImageField(upload_to='services/')
+
+	def __str__(self):
+		return self.title
+
 
 class Experience_Clients(models.Model):
 	name = models.CharField(max_length=20, default='')
@@ -26,6 +35,8 @@ class Work(models.Model):
 	project_link = models.URLField(null=True, blank=True)
 	date = models.DateField(null=True, blank=True)
 	featured = models.BooleanField(default=False)
+	image = models.ImageField(upload_to='works/', default='default.jpg')
+	image2 = models.ImageField(upload_to='works/', default='default.jpg')
 
 	class Meta:
 		verbose_name_plural = "Works"
